@@ -1,0 +1,96 @@
+SUMA
+add op1,op2
+op2=op2+op1
+
+op2 trebuie sa fie registru
+op1 poate  fi registru, val din memorie sau constanta
+
+EX:
+add $10, %eax
+eax=eax+10
+
+inc %eax
+------------------------------------------------------------------
+DIFERENTA
+sub op1,op2
+op2=op2-op1
+
+EX:
+mov $50,%eax
+sub $5, %eax
+//eax=45
+
+dec %ecx
+------------------------------------------------------------------
+INMULTIRE
+mul op (op este registru)
+(edx,eax)=eax*op (inmulteste eax cu op)
+     eax primii 32 de biti ai rezultatului
+urm 32 de biti in edx
+
+EX:
+mov $5,%eax
+mov $6,%ebx
+mul %ebx
+
+deci eax=30 si edx=0
+------------------------------------------------------------------
+IMPARTIRE
+div op
+(edx,eax)=(edx,eax)/op
+               eax - primii 32
+               edx - urmatorii 32 biti
+     in eax avem CATUL impartirii
+in edx avem RESTUL impartirii
+
+EX:
+mov $16,%eax
+mov $0,%edx
+mov $3,%ebx
+div %ebx
+
+deci eax=5
+     edx=1
+-------------------------------
+-------------------------------
+
+not op (inverseaza biti)
+-----
+and op1, op2 (si logic pe biti)
+op2=op2&op1
+-----
+or op1, op2
+-----
+xor op1, op2
+op2=op2^op1
+
+0 0 | 0
+0 1 | 1
+1 0 | 1
+1 1 | 0
+
+------------------------------
+
+0100101 -> 2 biti mai la dreapta
+0001001
+
+analof la stanga
+-------------------------------
+shl nr, op = shift left nr biti
+op=op<<nr
+
+shr nr, op = shift right nr biti
+op=op>>nr
+
+sal  |
+     | PASTREAZA BITUL DE SEMN (nu il shifteaza)
+sar  |
+
+------------------------------
+cmp (op2 cu op1)
+je label -> se duce daca op2=op1
+jne label -> se duce daca op2!=op1
+jg label -> se duce daca op2>op1
+jge -> op2>=op1
+jl -> op2<op1
+jle -> op2<=op1
