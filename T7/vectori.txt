@@ -1,0 +1,8 @@
+%edi %esi
+
+v: .long 0x1, 0x0, 0x3
+
+lea v, %edi <=> movl $v, %edi
+movl $0, %ecx
+movl $0, (%edi, %ecx, 4) <- %edi + %ecx*4
+			  DEVINE 0x1 ecx-ul

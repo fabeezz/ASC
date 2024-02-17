@@ -1,0 +1,11 @@
+gdb
+
+b main
+run
+
+ir - eax=...
+     ebx=... etc
+
+stepi (executa o linie de cod)
+
+c (se duce pana la urmatorul breakpoint, adica urmatoare eticheta)
